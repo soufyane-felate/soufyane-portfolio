@@ -1,0 +1,100 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  color: #f78c0a;
+  text-align: center;
+  margin: 50px 0;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #f78c0a;
+}
+
+.card {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.skills-list {
+  width: 100%;
+  margin: 2rem 0 0 0;
+}
+
+.personal-skills-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+}
+
+.personal-skills-list-horizontal li {
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+  max-width: 320px;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.personal-skills-list-horizontal li:hover {
+  box-shadow: 0 4px 16px rgba(255,60,60,0.13);
+  background: #282828;
+}
+
+.personal-icon {
+  color: #f78c0a;
+  margin-right: 0.6em;
+  font-size: 1.2em;
+  vertical-align: middle;
+  transition: color 0.2s;
+}
+
+.personal-skills-list-horizontal li:hover .personal-icon {
+  color: #ff3c3c;
+}
+
+@media (max-width: 900px) {
+  .personal-skills-list-horizontal {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

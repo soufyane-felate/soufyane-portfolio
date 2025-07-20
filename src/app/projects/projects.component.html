@@ -1,0 +1,39 @@
+<section id="project">
+  <h1>My Projects</h1>
+  <div class="container">
+    <div class="filter-buttons mb-3 text-center">
+      <button *ngFor="let lang of getLanguages()" class="btn btn-outline-primary m-1"
+        [class.active]="selectedLanguage === lang" (click)="setFilter(lang)">
+        {{ lang }}
+      </button>
+    </div>
+    <div class="projects-scroll-container">
+
+
+      <div *ngFor="let project of filteredProjects(); let i = index"
+        class="card d-flex flex-column justify-content-between"
+        style="width: 22rem; flex: 0 0 auto; margin-right: 1rem;">
+        <div>
+          <div class="scroll-container">
+            <img *ngFor="let image of project.Image" [src]="image" [alt]="project.title" class="card-img-top" />
+          </div>
+          <div class="card-body">
+            <h2>{{ project.title }}</h2>
+            <p class="card-text">{{ project.descriptionKey | translate }}</p>
+            <div class="d-grid mb-3">
+              <a [href]="project.UrlLink" target="_blank" class="btn btn-primary">
+                <i class="fas fa-external-link-alt me-2"></i>{{ 'PROJECTS.VIEW_CODE' | translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer text-center">{{project.langue}}</div>
+      </div>
+
+    </div>
+    <button class="btn btn-primary" routerLink="allProject">{{ 'PROJECTS.VIEW_ALL_PROJECTS' | translate }} </button>
+  </div>
+
+</section>
+<app-skills></app-skills>

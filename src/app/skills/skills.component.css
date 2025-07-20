@@ -1,0 +1,50 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  color: #f78c0a;
+  text-align: center;
+  margin: 50px 0;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #f78c0a;
+}
+
+.card {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+
+
+
+

@@ -1,0 +1,38 @@
+{
+  "HEADER": {
+    "HOME": "Home",
+    "ABOUT_ME": "About Me",
+    "PROJECTS": "Projects",
+    "CV": "CV",
+    "CONTACT": "Contact"
+  },
+  "HOME": {
+    "TITLE": "Soufyane Felate - Mobile & Full Stack Developer"
+  },
+  "PROJECTS": {
+    "VIEW_CODE": "View Code",
+    "VIEW_ALL_PROJECTS": "View All Projects",
+    "BUILD_FLOW_DESCRIPTION": "BuildFlow Manager is a web-based app that helps construction teams efficiently plan, organize, and track projects in real time.",
+    "COOKSPOT_DESCRIPTION": "CookSpot is a user-friendly website that provides delicious recipes, cooking tips, and meal planning ideas to inspire home cooks and food enthusiasts.",
+    "MOVIES_DESCRIPTION": "A movie website that offers users the latest films, trailers, reviews, and detailed information about upcoming releases, all in one place."
+  },
+  "SKILLS": {
+    "TITLE": "Skills",
+    "TECHNICAL": "Technical Skills",
+    "LANGUAGES": "Programming Languages: Java, JavaScript",
+    "WEB": "Web Development: HTML, CSS, XML, Angular, Bootstrap",
+    "FRAMEWORKS": "Frameworks & Technologies: Java EE, Spring Boot",
+    "DATABASES": "Databases: SQL",
+    "MOBILE": "Mobile Development: Flutter",
+    "TOOLS": "Tools: Android Studio, VS Code, IntelliJ IDEA, Trello",
+    "PERSONAL": "Personal Skills",
+    "PROBLEM_SOLVING": "Problem-solving ability",
+    "ORGANIZATION": "Organizational skills",
+    "AUTONOMY": "Autonomy",
+    "ADAPTABILITY": "Adaptability",
+    "TEAMWORK": "Teamwork",
+    "MOTIVATION": "Motivation",
+    "FLEXIBILITY": "Flexibility",
+    "FAST_LEARNING": "Ability to learn quickly"
+  }
+}

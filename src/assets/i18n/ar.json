@@ -1,0 +1,38 @@
+{
+  "HEADER": {
+    "HOME": "الرئيسية",
+    "ABOUT_ME": "عني",
+    "PROJECTS": "المشاريع",
+    "CV": "السيرة الذاتية",
+    "CONTACT": "اتصل بي"
+  },
+  "HOME": {
+    "TITLE": "سفيان فلات - مطور تطبيقات الهاتف والويب"
+  },
+  "PROJECTS": {
+    "VIEW_CODE": "عرض الكود",
+    "VIEW_ALL_PROJECTS": "عرض جميع المشاريع",
+    "BUILD_FLOW_DESCRIPTION": "BuildFlow Manager هو تطبيق ويب يساعد فرق البناء على تخطيط المشاريع وتنظيمها وتتبعها بكفاءة في الوقت الفعلي.",
+    "COOKSPOT_DESCRIPTION": "CookSpot هو موقع ويب سهل الاستخدام يوفر وصفات لذيذة ونصائح للطهي وأفكار لتخطيط الوجبات لإلهام الطهاة المنزليين وعشاق الطعام.",
+    "MOVIES_DESCRIPTION": "موقع أفلام يقدم للمستخدمين أحدث الأفلام والمقاطع الدعائية والمراجعات والمعلومات التفصيلية حول الإصدارات القادمة، كل ذلك في مكان واحد."
+  },
+  "SKILLS": {
+    "TITLE": "المهارات",
+    "TECHNICAL": "المهارات التقنية",
+    "LANGUAGES": "لغات البرمجة: جافا، جافاسكريبت",
+    "WEB": "تطوير الويب: HTML، CSS، XML، Angular، Bootstrap",
+    "FRAMEWORKS": "الأطر والتقنيات: Java EE، Spring Boot",
+    "DATABASES": "قواعد البيانات: SQL",
+    "MOBILE": "تطوير تطبيقات الجوال: Flutter",
+    "TOOLS": "الأدوات: Android Studio، VS Code، IntelliJ IDEA، Trello",
+    "PERSONAL": "المهارات الشخصية",
+    "PROBLEM_SOLVING": "القدرة على حل المشكلات",
+    "ORGANIZATION": "مهارات التنظيم",
+    "AUTONOMY": "الاستقلالية",
+    "ADAPTABILITY": "القدرة على التكيف",
+    "TEAMWORK": "العمل الجماعي",
+    "MOTIVATION": "الدافع",
+    "FLEXIBILITY": "المرونة",
+    "FAST_LEARNING": "القدرة على التعلم السريع"
+  }
+}

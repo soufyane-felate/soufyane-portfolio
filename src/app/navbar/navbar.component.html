@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand custom-brand" href="#">
+      <span class="logo-s">S</span>oufyane Felate
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center gap-3 my-2 my-lg-0 align-items-center">
+        <li *ngFor="let item of navItems" class="nav-item">
+          <a
+            class="nav-link text-light"
+            *ngIf="item.labelKey && item.type === 'route'"
+            [routerLink]="item.link"
+            routerLinkActive="active"
+            (click)="handleItemClick(item, $event)"
+          >{{ item.labelKey ? (item.labelKey | translate) : '' }}</a>
+          <a
+            class="nav-link text-light"
+            *ngIf="item.labelKey && item.type === 'anchor'"
+            href="#{{item.link}}"
+            (click)="handleItemClick(item, $event)"
+          >{{ item.labelKey ? (item.labelKey | translate) : '' }}</a>
+          <a
+            class="nav-link text-light"
+            *ngIf="item.labelKey && item.type === 'action'"
+            href="#"
+            (click)="handleItemClick(item, $event)"
+          >{{ item.labelKey ? (item.labelKey | translate) : '' }}</a>
+        </li>
+        <li class="nav-item">
+          <select class="form-select bg-dark text-light" [ngModel]="currentLanguage" (change)="onLanguageChange($event)">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

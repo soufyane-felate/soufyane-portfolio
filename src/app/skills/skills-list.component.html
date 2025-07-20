@@ -1,0 +1,11 @@
+<section class="skills-list">
+  <div class="container">
+    <h1>My Skills</h1>
+    <ul class="personal-skills-list-horizontal">
+      <li *ngFor="let skill of skills">
+        <i class="{{ skill.icon }} personal-icon"></i>
+        {{ skill.title | translate }}
+      </li>
+    </ul>
+  </div>
+</section>

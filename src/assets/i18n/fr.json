@@ -1,0 +1,38 @@
+{
+  "HEADER": {
+    "HOME": "Accueil",
+    "ABOUT_ME": "À Propos",
+    "PROJECTS": "Projets",
+    "CV": "CV",
+    "CONTACT": "Contact"
+  },
+  "HOME": {
+    "TITLE": "Soufyane Felate - Développeur Mobile & Full Stack"
+  },
+  "PROJECTS": {
+    "VIEW_CODE": "Voir le Code",
+    "VIEW_ALL_PROJECTS": "Voir tous les Projets",
+    "BUILD_FLOW_DESCRIPTION": "BuildFlow Manager est une application web qui aide les équipes de construction à planifier, organiser et suivre les projets efficacement en temps réel.",
+    "COOKSPOT_DESCRIPTION": "CookSpot est un site web convivial qui propose de délicieuses recettes, des astuces de cuisine et des idées de planification de repas pour inspirer les cuisiniers amateurs et les passionnés de gastronomie.",
+    "MOVIES_DESCRIPTION": "Un site web de films qui offre aux utilisateurs les derniers films, bandes-annonces, critiques et informations détaillées sur les sorties à venir, le tout en un seul endroit."
+  },
+  "SKILLS": {
+    "TITLE": "Compétences",
+    "TECHNICAL": "Compétences Techniques",
+    "LANGUAGES": "Langages de programmation : Java, JavaScript",
+    "WEB": "Développement web : HTML, CSS, XML, Angular, Bootstrap",
+    "FRAMEWORKS": "Frameworks et technologies : Java EE, Spring Boot",
+    "DATABASES": "Bases de données : SQL",
+    "MOBILE": "Développement mobile : Flutter",
+    "TOOLS": "Outils : Android Studio, VS Code, IntelliJ IDEA, Trello",
+    "PERSONAL": "Compétences personnelles",
+    "PROBLEM_SOLVING": "Capacité à résoudre des problèmes",
+    "ORGANIZATION": "Sens de l’organisation",
+    "AUTONOMY": "Autonomie",
+    "ADAPTABILITY": "Capacité d’adaptation",
+    "TEAMWORK": "Travail en équipe",
+    "MOTIVATION": "Motivation",
+    "FLEXIBILITY": "Flexibilité",
+    "FAST_LEARNING": "Capacité à apprendre rapidement"
+  }
+}

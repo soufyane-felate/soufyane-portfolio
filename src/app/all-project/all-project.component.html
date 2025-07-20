@@ -1,0 +1,26 @@
+<section id="project">
+    <h1>All My Projects</h1>
+    <div class="container">
+      <div *ngFor="let project of projects" class="card" style="width: 22rem">
+        <div class="scroll-container">
+          <img
+            *ngFor="let image of project.Image"
+            [src]="image"
+            [alt]="project.title"
+            class="card-img-top"
+          />
+        </div>
+        <div class="card-body">
+  
+          <h2>{{project.title}}</h2>
+          <p class="card-text">{{ project.description }}</p>
+          <div class="d-grid">
+            <a [href]="project.UrlLink" target="_blank" class="btn btn-primary">
+              <i class="fas fa-external-link-alt me-2"></i>code source
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,16 @@
+<section class="skills">
+<div class="container">
+  <h1>My Skills</h1>
+  <div class="row justify-content-center g-4">
+    <div *ngFor="let skill of skills" class="col-6 col-sm-4 col-md-3 col-lg-2">
+      <div class="card">
+        <img [src]="skill.image" class="card-img-top" [alt]="skill.title" />
+        <div class="card-body">
+          <h6 class="card-title">{{ skill.title }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<app-skills-list></app-skills-list>
