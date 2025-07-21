@@ -22,42 +22,52 @@
 
   <div class="center-container">
     <form (ngSubmit)="onSubmit($event)" class="form-group">
-      <input
-        type="text"
-        placeholder="Your Name"
-        class="form-control"
-        id="name"
-        [(ngModel)]="name"
-        name="name"
-        required
-      />
-      <input
-        type="email"
-        placeholder="Your Email"
-        class="form-control"
-        id="email"
-        [(ngModel)]="email"
-        name="email"
-        required
-      />
-      <input
-        type="text"
-        placeholder="Subject"
-        class="form-control"
-        id="subject"
-        [(ngModel)]="subject"
-        name="subject"
-        required
-      />
-      <textarea
-        placeholder="Your Message"
-        class="form-control"
-        rows="5"
-        id="message"
-        [(ngModel)]="message"
-        name="message"
-        required
-      ></textarea>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder=" "
+          [(ngModel)]="name"
+          name="name"
+          required
+        />
+        <label for="name">Your Name</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder=" "
+          [(ngModel)]="email"
+          name="email"
+          required
+        />
+        <label for="email">Your Email</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          [(ngModel)]="subject"
+          name="subject"
+          required
+        />
+        <label for="subject">Subject</label>
+      </div>
+      <div class="floating-input">
+        <textarea
+          class="form-control"
+          rows="5"
+          id="message"
+          [(ngModel)]="message"
+          name="message"
+          required
+        ></textarea>
+        <label for="message">Your Message</label>
+      </div>
 
       <h5 id="validate" [class.error]="!isValid" [class.success]="isValid">
         {{ validate }}
