@@ -78,6 +78,7 @@ main{
     max-width: 150px;
   }
   .name h1 {
+    padding-top: 25px;
     font-size: 1.5rem;
   }
 }
