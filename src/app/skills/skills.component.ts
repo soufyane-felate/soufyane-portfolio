@@ -33,6 +33,14 @@ export class SkillsComponent {
       image: 'https://cdn-icons-png.flaticon.com/512/226/226777.png',
     },
     {
+      title: 'SPRING BOOT',
+      image: 'https://www.svgrepo.com/show/354380/spring-icon.svg',
+    },
+    {
+      title: 'ANGULAR',
+      image: 'https://www.svgrepo.com/show/353396/angular-icon.svg',
+    },
+    {
       title: 'FLUTTER',
       image:
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
