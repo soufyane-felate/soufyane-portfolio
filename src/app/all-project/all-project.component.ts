@@ -58,5 +58,22 @@ export class AllProjectComponent {
         '../../assets/images/wheath3.png',
       ],
     },
+    {
+      title: 'E-tech store',
+      description:' E-Tech Store développé en Spring Boot 3, fournissant une API REST sécurisée pour gérer les utilisateurs, produits, Il intègre JWT pour l’authentification, JPA/Hibernate pour l’accès aux données',
+      UrlLink: 'https://github.com/soufyane-felate/E-Tech-Store-Backend',
+      langue: ['html', 'css', 'angular','spring boot','My SQL','Bootstrap'],
+
+      Image: [
+        '../../assets/images/e1.png',
+        '../../assets/images/e2.png',
+        '../../assets/images/e3.png',
+        '../../assets/images/e4.png',
+        '../../assets/images/e5.png',
+        '../../assets/images/e6.png',
+        '../../assets/images/e8.png',
+       
+      ],
+    },
   ];
 }

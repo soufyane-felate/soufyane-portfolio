@@ -24,24 +24,87 @@ h1::after {
 }
 
 .card {
-  background-color: #1e1e1e;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   color: white;
   border: none;
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(247, 140, 10, 0.1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f78c0a 0%, #e07b00 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px) scale(1.05) rotateY(5deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(247, 140, 10, 0.2);
 }
 
 .card img {
   height: 100px;
   object-fit: contain;
-  padding: 10px;
+  padding: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.9);
+}
+
+.card:hover img {
+  transform: scale(1.1) rotate(5deg);
+  filter: brightness(1.1);
 }
 
 .card-body {
   text-align: center;
+  padding: 20px 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(247, 140, 10, 0.05) 0%, rgba(247, 140, 10, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover .card-body::after {
+  opacity: 1;
+}
+
+.card-title {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover .card-title {
+  color: #f78c0a;
 }
 
 

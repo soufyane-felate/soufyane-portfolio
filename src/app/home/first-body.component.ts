@@ -8,6 +8,7 @@ import { ProjectsComponent } from '../projects/projects.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 
 @Component({
@@ -15,7 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [RouterModule, AboutComponent, AllProjectComponent,
     ContactComponent, ExperienceComponent, FooterComponent,
-    ProjectsComponent, SkillsComponent, TranslateModule],
+    ProjectsComponent, SkillsComponent, TranslateModule, NavbarComponent],
   templateUrl: './first-body.component.html',
   styleUrl: './first-body.component.css'
 })

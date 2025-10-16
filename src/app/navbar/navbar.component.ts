@@ -1,6 +1,5 @@
-import { Component, Output, EventEmitter, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -8,44 +7,38 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    CommonModule,
-    TranslateModule,
-    MatSlideToggleModule,
-    FormsModule,
-    RouterModule
-  ],
+    imports: [CommonModule, MatSlideToggleModule, FormsModule, RouterModule],
+
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
-  @Output() languageChanged = new EventEmitter<string>();
   @Output() themeToggled = new EventEmitter<void>();
 
-  currentLanguage: string = 'en';
+  isMenuOpen = false; // ✅ état du menu
 
   navItems = [
-    { labelKey: 'HEADER.HOME', link: 'home', type: 'anchor' },
-    {  link: 'About', type: 'anchor' },
-    { labelKey: 'HEADER.PROJECTS', link: 'project', type: 'anchor' },
-    { labelKey: 'HEADER.CV', type: 'action', action: () => this.downloadCV() },
-    { labelKey: 'HEADER.CONTACT', link: 'contact-section', type: 'anchor' },
+    { label: 'Home', link: 'home', type: 'anchor' },
+    { label: 'About', link: 'About', type: 'anchor' },
+    { label: 'Projects', link: 'project', type: 'anchor' },
+    { label: 'CV', type: 'action', action: () => this.downloadCV() },
+    { label: 'Contact', link: 'contact-section', type: 'anchor' },
   ];
 
-  constructor(
-    private translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.currentLanguage = this.translate.currentLang;
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen; // ✅ ouvre/ferme le menu
   }
 
-  onLanguageChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    const lang = selectElement.value;
-    this.translate.use(lang);
-    this.languageChanged.emit(lang);
+  handleItemClick(item: any, event: Event): void {
+    // Si c’est une action, exécute-la
+    if (item.type === 'action' && item.action) {
+      item.action();
+    }
+
+    // ✅ Ferme automatiquement le menu après un clic
+    this.isMenuOpen = false;
   }
 
   downloadCV(): void {
@@ -53,18 +46,5 @@ export class NavbarComponent implements OnInit {
     link.href = '/assets/CV/CV_FSOUFYANE_O.pdf.pdf';
     link.download = 'soufyane_cv.pdf';
     link.click();
-  }
-
-  handleItemClick(item: any, event: Event) {
-    if (item.type === 'action' && item.action) {
-      event.preventDefault();
-      item.action();
-    } else if (item.type === 'anchor') {
-      event.preventDefault();
-      const el = document.getElementById(item.link);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
   }
 }
