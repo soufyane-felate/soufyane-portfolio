@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 export class NavbarComponent implements OnInit {
   @Output() themeToggled = new EventEmitter<void>();
 
-  isMenuOpen = false; // ✅ état du menu
+  isMenuOpen = false;
 
   navItems = [
     { label: 'Home', link: 'home', type: 'anchor' },
@@ -28,23 +28,21 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen; // ✅ ouvre/ferme le menu
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   handleItemClick(item: any, event: Event): void {
-    // Si c’est une action, exécute-la
     if (item.type === 'action' && item.action) {
       item.action();
     }
 
-    // ✅ Ferme automatiquement le menu après un clic
     this.isMenuOpen = false;
   }
 
   downloadCV(): void {
     const link = document.createElement('a');
-    link.href = '/assets/CV/CV_FSOUFYANE_O.pdf.pdf';
-    link.download = 'soufyane_cv.pdf';
+    link.href = '/assets/CV/cv.pdf';
+    link.download = 'cv.pdf';
     link.click();
   }
 }

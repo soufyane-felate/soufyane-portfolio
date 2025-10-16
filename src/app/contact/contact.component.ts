@@ -21,13 +21,12 @@ export class ContactComponent {
       icon: 'https://cdn-icons-png.flaticon.com/128/684/684908.png',
       title: 'Address',
       t1: '25060 boujaad , MAR',
-      t2: '23000 Beni mellal , MAR',
     },
     {
       icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047587.png',
       title: 'Email',
       t1: 'soufyanfellat03@gmail.com',
-      t2: 'soufyanfellat0@gmail.com',
+      t2: 'soufyane.felate3@gmail.com',
     },
   ];
 
