@@ -1,15 +1,39 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import  emailjs from '@emailjs/browser';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
+  form:FormGroup=this.fb.group({
+    from_name: '',
+    to_name: 'Admin',
+    form_email: '',
+    subject: '',
+    message: '',
+  });
+  constructor(private fb:FormBuilder) {}
+
+async send(){
+  emailjs.init('z8bSEWkT31eq1iilJ');
+ let response =await emailjs.send("service_6ybki0x","template_ab51u48",{
+  from_name:this.form.value.from_name,
+  to_name: this.form.value.to_name,
+  form_email: this.form.value.form_email,
+  subject: this.form.value.subject,
+  message: this.form.value.message,
+  });
+  alert('message sent')
+  this.form.reset();
+  }
+
+
   Informations = [
     {
       icon: 'https://cdn-icons-png.flaticon.com/128/5585/5585856.png',
@@ -30,33 +54,15 @@ export class ContactComponent {
     },
   ];
 
-  name: string = '';
-  email: string = '';
-  subject: string = '';
-  message: string = '';
-  validate: string = '';
-  isValid: boolean = false;
 
-  onSubmit(event: Event) {
-    event.preventDefault();
-    this.validateInput();
-  }
-
-  validateInput() {
-    if (!this.name || !this.email || !this.message) {
-      this.validate = 'All fields are required';
-      this.isValid = false;
-    } else if (!this.validateEmail(this.email)) {
-      this.validate = 'Please enter a valid email address';
-      this.isValid = false;
-    } else {
-      this.validate = 'Message sent successfully!';
-      this.isValid = true;
-    }
-  }
-
-  validateEmail(email: string): boolean {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(email);
-  }
+  
 }
+
+/*
+emailjs.send("service_6ybki0x","template_ab51u48",{
+name: "test",
+form_name: "ttt",
+subject: "hhsj",
+message: "jksdjd",
+});
+*/

@@ -22,13 +22,12 @@ h1::after {
   border: none;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(247, 140, 10, 0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.4s ease;
   margin-bottom: 30px;
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: #ffffff;
   flex: 0 0 22rem;
   min-width: 280px;
   max-width: 350px;
-  scroll-snap-align: start;
   position: relative;
   overflow: hidden;
 }
@@ -40,10 +39,10 @@ h1::after {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #f78c0a 0%, #e07b00 100%);
+  background: #f78c0a;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.4s ease;
   z-index: 2;
 }
 
@@ -54,18 +53,15 @@ h1::after {
 .card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(247, 140, 10, 0.15);
-  z-index: 10;
 }
 
 .card-img-top {
   height: 120px;
   object-fit: contain;
   padding: 20px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: #ffffff;
   border-radius: 16px 16px 0 0;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .card:hover .card-img-top {
@@ -75,27 +71,7 @@ h1::after {
 .card-body {
   padding: 25px;
   border-radius: 20px;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-}
-
-.card-body::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(247, 140, 10, 0.03) 0%, rgba(247, 140, 10, 0.01) 100%);
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.card:hover .card-body::after {
-  opacity: 1;
+  background: #ffffff;
 }
 
 .filter-buttons {
@@ -107,72 +83,37 @@ h1::after {
 }
 
 .filter-buttons .btn {
-  background: linear-gradient(135deg, transparent 0%, rgba(247, 140, 10, 0.1) 100%);
+  background: transparent;
   border: 2px solid #f78c0a;
   color: #f78c0a;
   padding: 8px 20px;
   border-radius: 25px;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-}
-
-.filter-buttons .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #f78c0a 0%, #e07b00 100%);
-  transition: left 0.3s ease;
-  z-index: -1;
-}
-
-.filter-buttons .btn:hover::before,
-.filter-buttons .btn.active::before {
-  left: 0;
+  transition: all 0.3s ease;
 }
 
 .filter-buttons .btn:hover,
 .filter-buttons .btn.active {
   color: white;
+  background: #f78c0a;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(247, 140, 10, 0.3);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #f78c0a 0%, #e07b00 100%);
+  background: #f78c0a;
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(247, 140, 10, 0.3);
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
 .btn-primary:hover {
-  background: linear-gradient(135deg, #e07b00 0%, #d16600 100%);
+  background: #e07b00;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(247, 140, 10, 0.4);
-}
-
-.btn-primary:hover::before {
-  left: 100%;
 }
 
 .container {
@@ -183,20 +124,6 @@ h1::after {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-}
-
-/* Add container background effect */
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="%23f78c0a" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>') repeat;
-  pointer-events: none;
-  z-index: 0;
 }
 
 #project {
@@ -208,29 +135,16 @@ h1::after {
   padding: 15px 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   color: white;
   border: none;
-  background: linear-gradient(135deg, #f78c0a 0%, #e07b00 100%);
+  background: #f78c0a;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: 40px auto 0;
   box-shadow: 0 6px 20px rgba(247, 140, 10, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.allProject::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
 }
 
 .allProject:hover {
@@ -238,31 +152,18 @@ h1::after {
   box-shadow: 0 12px 30px rgba(247, 140, 10, 0.4);
 }
 
-.allProject:hover::before {
-  left: 100%;
-}
-
-/* Enhanced Animation for project cards */
-@keyframes cardSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(60px) rotateX(15deg) scale(0.9);
-    filter: blur(10px);
-  }
-  60% {
-    opacity: 0.8;
-    transform: translateY(-10px) rotateX(-2deg) scale(1.02);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-
+/* Simplified animation for project cards */
 .card {
-  animation: cardSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardSlideIn 0.6s ease forwards;
+}
+
+@keyframes cardSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Staggered animation for multiple cards */
@@ -292,12 +193,12 @@ h1::after {
 }
 
 .projects-scroll-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #f78c0a 0%, #e07b00 100%);
+  background: #f78c0a;
   border-radius: 4px;
 }
 
 .card-footer {
-  background: linear-gradient(135deg, rgba(247, 140, 10, 0.1) 0%, rgba(247, 140, 10, 0.05) 100%);
+  background: rgba(247, 140, 10, 0.1);
   border-top: 1px solid rgba(247, 140, 10, 0.2);
   padding: 15px;
   font-size: 1.1rem;
@@ -305,11 +206,7 @@ h1::after {
   color: #f78c0a;
   text-align: center;
   border-radius: 0 0 20px 20px;
-  position: relative;
-  z-index: 1;
 }
-
-
 
 @media (max-width: 991.98px) {
   .projects-scroll-container {
@@ -349,28 +246,12 @@ h1::after {
 }
 
 .scroll-container {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: #ffffff;
   overflow-x: auto;
   white-space: nowrap;
   padding: 15px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(247, 140, 10, 0.6) rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px 16px 0 0;
-}
-
-.scroll-container::-webkit-scrollbar {
-  height: 6px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #f78c0a 0%, #e07b00 100%);
-  border-radius: 3px;
 }
 
 .scroll-container img {
@@ -380,11 +261,11 @@ h1::after {
   margin-right: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   object-fit: cover;
 }
 
 .scroll-container img:hover {
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }

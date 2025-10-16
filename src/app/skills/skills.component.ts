@@ -55,5 +55,34 @@ export class SkillsComponent {
       image:
         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
     },
+    // Added requested skills
+    {
+      title: 'DOCKER',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+    },
+    {
+      title: 'FIGMA',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+    },
+    {
+      title: 'VS CODE',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+    },
+    {
+      title: 'INTELLIJ',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg',
+    },
+    {
+      title: 'ANDROID STUDIO',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg',
+    },
+    {
+      title: 'GITHUB',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    },
+    {
+      title: 'POSTMAN',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg',
+    },
   ];
 }

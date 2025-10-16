@@ -1,133 +1,126 @@
 <section id="contact-section">
-<div class="container">
-  <h1>Contact</h1>
+  <div class="container">
+    <h1>Contact</h1>
 
-  <div class="container1">
-    <div *ngFor="let information of Informations" class="card">
-      <img
-        [src]="information.icon"
-        [alt]="information.title + ' icon'"
-        loading="lazy"
-      />
-      <h3 class="title">{{ information.title }}</h3>
-      <p class="t1">{{ information.t1 }}</p>
-      <p *ngIf="information.t2" class="t1">{{ information.t2 }}</p>
+    <div class="container1">
+      <div *ngFor="let information of Informations" class="card">
+        <img
+          [src]="information.icon"
+          [alt]="information.title + ' icon'"
+          loading="lazy"
+        />
+        <h3 class="title">{{ information.title }}</h3>
+        <p class="t1">{{ information.t1 }}</p>
+        <p *ngIf="information.t2" class="t1">{{ information.t2 }}</p>
+      </div>
     </div>
-  </div>
 
-  <h6 style="color: white;">
-    IF YOU GOT ANY QUESTIONS<br />
-    PLEASE DO NOT HESITATE TO SEND ME A MESSAGE
-  </h6>
+    <h6 style="color: white;">
+      IF YOU GOT ANY QUESTIONS<br />
+      PLEASE DO NOT HESITATE TO SEND ME A MESSAGE
+    </h6>
 
-  <div class="center-container">
-    <form (ngSubmit)="onSubmit($event)" class="form-group">
-      <div class="form-floating">
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          placeholder=" "
-          [(ngModel)]="name"
-          name="name"
-          required
+    <div class="center-container">
+      <form [formGroup]="form" (submit)="send()" class="form-group">
+        <div class="form-floating">
+          <input
+            formControlName="from_name"
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder=" "
+            required
+          />
+          <label for="name">Your Name</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            formControlName="form_email"
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder=" "
+            required
+          />
+          <label for="email">Your Email</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            formControlName="subject"
+            type="text"
+            class="form-control"
+            id="subject"
+            placeholder=" "
+            required
+          />
+          <label for="subject">Subject</label>
+        </div>
+
+        <div class="floating-input">
+          <textarea
+            formControlName="message"
+            class="form-control"
+            rows="5"
+            id="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+
+        <button class="btn btn-warning" id="submit" type="submit">
+          SEND MESSAGE
+        </button>
+      </form>
+    </div>
+
+    <h5 class="cwm" style="color: white;">Connect with me</h5>
+    <div class="social-icons">
+      <a
+        href="https://www.facebook.com/soufyan.mohamed.923"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png"
+          class="icon"
+          alt="Facebook"
         />
-        <label for="name">Your Name</label>
-      </div>
-      <div class="form-floating">
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          placeholder=" "
-          [(ngModel)]="email"
-          name="email"
-          required
+      </a>
+      <a
+        href="https://www.instagram.com/felate_soufyane/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png"
+          class="icon"
+          alt="Instagram"
         />
-        <label for="email">Your Email</label>
-      </div>
-      <div class="form-floating">
-        <input
-          type="text"
-          class="form-control"
-          id="subject"
-          [(ngModel)]="subject"
-          name="subject"
-          required
+      </a>
+      <a
+        href="https://www.linkedin.com/in/felate-soufyane-03f/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/145/145807.png"
+          class="icon"
+          alt="LinkedIn"
         />
-        <label for="subject">Subject</label>
-      </div>
-      <div class="floating-input">
-        <textarea
-          class="form-control"
-          rows="5"
-          id="message"
-          [(ngModel)]="message"
-          name="message"
-          required
-        ></textarea>
-        <label for="message" style="color: white;">Your Message</label>
-      </div>
-
-      <h5 id="validate" [class.error]="!isValid" [class.success]="isValid">
-        {{ validate }}
-      </h5>
-
-      <button class="btn btn-warning" id="submit" type="submit">
-        SEND MESSAGE
-      </button>
-    </form>
-  </div>
-  <h5 class="cwm" style="color: white;">connect with me</h5>
-  <div class="social-icons">
-    <a
-      href="https://www.facebook.com/soufyan.mohamed.923"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Facebook"
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png"
-        class="icon"
-        alt="Facebook"
-      />
-    </a>
-    <a
-      href="https://www.instagram.com/felate_soufyane/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png"
-        class="icon"
-        alt="Instagram"
-      />
-    </a>
-    <a
-      href="https://www.linkedin.com/in/felate-soufyane-03f/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="LinkedIn"
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/128/145/145807.png"
-        class="icon"
-        alt="LinkedIn"
-      />
-    </a>
-    <a
-      href="https://wa.me/qr/X5Y24WDTL3VIN1"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="WhatsApp"
-    >
-      <img
-        src="https://cdn-icons-png.flaticon.com/128/15713/15713434.png"
-        class="icon"
-        alt="WhatsApp"
-      />
-    </a>
-  </div>
+      </a>
+      <a
+        href="https://wa.me/qr/X5Y24WDTL3VIN1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/15713/15713434.png"
+          class="icon"
+          alt="WhatsApp"
+        />
+      </a>
+    </div>
   </div>
 </section>
